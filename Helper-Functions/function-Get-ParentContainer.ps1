@@ -6,7 +6,7 @@ function Get-ParentContainer{
         [ValidateSet('distinguishedName','CannonicalName')]
         $ReturnFormat = 'distinguishedName'
     )
-    [arraylist]$elem = $DN.split(',')
+    [System.Collections.ArrayList]$elem = $DN.split(',')
     <#
         ActiveDirectory allows commas in the names of objects i.e. 'CN=LastName\, FirstName'
         The following drops the first element in the $elem array regardless of name and makes 
